@@ -18,6 +18,11 @@ pwd = Dir.pwd+'/'
 publicDir =  pwd.gsub(/kumamoto-source/, 'kumamoto-public')
 publicDirOnline = '/kumamoto-public/'
 
+# smart defaults
+header = '<html><body>'
+footer = '</body></html>'
+navbar = ''
+
 if $OPT[:online]
 	pathStart = publicDirOnline
 	pathEnd = ''
@@ -26,22 +31,29 @@ else
 	pathEnd = '/index.html'
 end
 
-def readAndEncode(f)
+def onlineOnly str
+	if $OPT[:online]
+		str.gsub(/{{onlineOnly(Start|End)}}/, '')
+	else
+		str.gsub(/{{onlineOnlyStart}}[\s\S]*?{{onlineOnlyEnd}}/x, '')
+		#raise str.match(/{{onlineOnlyStart}}[\s\S]*?{{onlineOnlyEnd}}/).inspect
+	end
+end
+
+
+def readAndEncode f
 	if String.method_defined?(:encode)
-		f.read.encode('UTF-8', 'UTF-8', :invalid => :replace)
+		out = f.read.encode('UTF-8', 'UTF-8', :invalid => :replace)
 	else
 		ic = Iconv.new('UTF-8', 'UTF-8//IGNORE')
-		ic.iconv(f.read)
+		out = ic.iconv(f.read)
 	end
+	onlineOnly out
 end
 
 puts 'Publishing ' + ($OPT[:online] ? 'for the web' : 'locally')+".\n\n"
 puts 'Public Dir: '+ publicDir
 puts 'Public Dir Web: '+ publicDirOnline
-
-header = '<html><body>'
-footer = '</body></html>'
-navbar = ''
 
 File.open(pwd+"header.html") do |f|
 	header = readAndEncode( f )
@@ -59,8 +71,7 @@ end
 
 ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'splash', 'privacidad'].each do |name|
 	File.open(pwd+name+".html") do |f|
-		html = readAndEncode(f)
-		
+		html = readAndEncode( f )
 		title = html.match(/^\s*title:(.*)$/)[1].strip
 
 		header.gsub!(/{{title}}/, title)
@@ -73,12 +84,13 @@ end
 		unless (File.exists?(publicDir+name) or (name=='index'))
 			Dir.mkdir(publicDir+name)
 		end
-		unless name == 'index'
-			header += navbar
+		headerNavbar = header
+		unless (name == 'index') or (name == 'splash')
+			headerNavbar = header + navbar
 		end
 		publicHtml = publicDir+(name == 'index' ? 'index' : (name+'/index'))+'.html'
 		File.open(publicHtml, "w+").write(
-			header+html+footer
+			headerNavbar +html+footer
 		)
 		puts 'Published: '+name
 	end
