@@ -1,8 +1,30 @@
+#!/usr/bin/env ruby
+require 'optparse'
 require 'rubygems'
 require 'iconv' unless String.method_defined?(:encode) #because http://stackoverflow.com/questions/2982677/ruby-1-9-invalid-byte-sequence-in-utf-8
 
+$OPT = { #Options
+	:online=>false,
+}
+
+OptionParser.new do|opts|
+	opts.banner = "Usage: kupu [options]. Publish kumamoto-source into kumamoto-public."
+	opts.on( '-o', '--online', 'Publish with online paths. Default false.' ) do
+		$OPT[:online] = true
+	end
+end.parse!
+
 pwd = Dir.pwd+'/'
 publicDir =  pwd.gsub(/kumamoto-source/, 'kumamoto-public')
+publicDirOnline = '/kumamoto-public/'
+
+if $OPT[:online]
+	pathStart = publicDirOnline
+	pathEnd = ''
+else
+	pathStart = publicDir
+	pathEnd = '/index.html'
+end
 
 def readAndEncode(f)
 	if String.method_defined?(:encode)
@@ -13,13 +35,17 @@ def readAndEncode(f)
 	end
 end
 
+puts 'Publishing ' + ($OPT[:online] ? 'for the web' : 'locally')+".\n\n"
+puts 'Public Dir: '+ publicDir
+puts 'Public Dir Web: '+ publicDirOnline
+
 header = '<html><body>'
 footer = '</body></html>'
 navbar = ''
 
 File.open(pwd+"header.html") do |f|
 	header = readAndEncode( f )
-	header.gsub!(/{{localStart}}/, publicDir)
+	header.gsub!(/{{pathStart}}/, pathStart)
 	
 end
 File.open(pwd+"footer.html") do |f|
@@ -27,12 +53,11 @@ File.open(pwd+"footer.html") do |f|
 end
 File.open(pwd+"navbar.html") do |f|
 	navbar = readAndEncode( f )
-	navbar.gsub!(/{{localStart}}/, publicDir)
-	navbar.gsub!(/{{localEnd}}/, '/index.html')
+	navbar.gsub!(/{{pathStart}}/, pathStart)
+	navbar.gsub!(/{{pathEnd}}/, pathEnd)
 end
 
-puts 'pwd: '+pwd
-['index', 'principios', 'propuestas', 'compromisos', 'kit'].each do |name|
+['index', 'principios', 'propuestas', 'compromisos', 'kit', 'splash', 'privacidad'].each do |name|
 	File.open(pwd+name+".html") do |f|
 		html = readAndEncode(f)
 		
@@ -40,9 +65,8 @@ puts 'pwd: '+pwd
 
 		header.gsub!(/{{title}}/, title)
 
-		html.gsub!(/{{localEnd}}/, '/index.html')
-		html.gsub!(/{{localStart}}/, publicDir)
-
+		html.gsub!(/{{pathEnd}}/, pathEnd)
+		html.gsub!(/{{pathStart}}/, pathStart)
 
 		html.gsub!(/---.*?---/m, '')
 
