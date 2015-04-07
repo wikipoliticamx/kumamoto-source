@@ -4,35 +4,37 @@ require 'rubygems'
 require 'iconv' unless String.method_defined?(:encode) #because http://stackoverflow.com/questions/2982677/ruby-1-9-invalid-byte-sequence-in-utf-8
 
 $OPT = { #Options
-	:online=>false,
+	:mode=>'serverless'
 }
 
 OptionParser.new do|opts|
 	opts.banner = "Usage: kupu [options]. Publish kumamoto-source into kumamoto-public."
-	opts.on( '-o', '--online', 'Publish with online paths. Default false.' ) do
-		$OPT[:online] = true
+	opts.on( '-m STR', '--mode STR', 'Publish with online paths. Default false.' ) do |m|
+		$OPT[:mode] = m
 	end
 end.parse!
 
 pwd = Dir.pwd+'/'
 publicDir =  pwd.gsub(/kumamoto-source/, 'kumamoto-public')
-publicDirOnline = '/kumamoto-public/'
 
 # smart defaults
 header = '<html><body>'
 footer = '</body></html>'
 navbar = ''
 
-if $OPT[:online]
-	pathStart = publicDirOnline
+if $OPT[:mode] == 'github'
+	pathStart = '/kumamoto-public/'
 	pathEnd = ''
-else
+elsif $OPT[:mode] == 'localserver'
+	pathStart = '/'
+	pathEnd = ''
+elsif $OPT[:mode] == 'serverless'
 	pathStart = publicDir
 	pathEnd = '/index.html'
 end
 
 def onlineOnly str
-	if $OPT[:online]
+	if $OPT[:mode] == 'github'
 		str.gsub(/{{onlineOnly(Start|End)}}/, '')
 	else
 		str.gsub(/{{onlineOnlyStart}}[\s\S]*?{{onlineOnlyEnd}}/x, '')
@@ -51,9 +53,8 @@ def readAndEncode f
 	onlineOnly out
 end
 
-puts 'Publishing ' + ($OPT[:online] ? 'for the web' : 'locally')+".\n\n"
+puts 'Publishing for ' + $OPT[:mode]+".\n\n"
 puts 'Public Dir: '+ publicDir
-puts 'Public Dir Web: '+ publicDirOnline
 
 File.open(pwd+"header.html") do |f|
 	header = readAndEncode( f )
