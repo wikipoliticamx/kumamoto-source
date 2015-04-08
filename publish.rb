@@ -2,10 +2,11 @@
 require 'optparse'
 require 'rubygems'
 require 'iconv' unless String.method_defined?(:encode) #because http://stackoverflow.com/questions/2982677/ruby-1-9-invalid-byte-sequence-in-utf-8
+#ruby -run -ehttpd . -p8000
 
 $OPT = { #Options
-	:mode=>'serverless',
-	:splashOnly=>false
+	:mode=>'server'
+	#:splashOnly=>false
 }
 
 OptionParser.new do|opts|
@@ -13,13 +14,13 @@ OptionParser.new do|opts|
 	opts.on( '-m STR', '--mode STR', 'Publish with online paths. Default false.' ) do |m|
 		$OPT[:mode] = m
 	end
-	opts.on( '--splashOnly', 'Only publish the splash page.' ) do |m|
-		$OPT[:splashOnly] = true
-	end
+	#opts.on( '--splashOnly', 'Only publish the splash page.' ) do |m|
+		#$OPT[:splashOnly] = true
+	#end
 end.parse!
 
 root = '/Users/bex/Dropbox/prjcts/else/wikipolitica/WEB/kumamoto-source/' #Dir.pwd+'/'
-publicDir =  root.gsub(/kumamoto-source/, 'kumamoto-mx')
+publicDir =  root.gsub(/kumamoto-source/, 'kumamoto-mx')+'test/'
 
 # smart defaults
 header = '<html><body>'
@@ -47,6 +48,7 @@ def parse str
 	end
 	str.gsub!(/{{pathStart}}/, $pathStart)
 	str.gsub!(/{{pathEnd}}/, $pathEnd)
+	str.gsub!(/{{test}}/, 'test/')
 	str
 end
 
@@ -74,11 +76,7 @@ File.open(root+"navbar.html") do |f|
 	navbar = readAndEncode( f )
 end
 
-pages = if $OPT[:splashOnly]
-	['splash', 'mapa-d10']
-else
-	['index', 'principios', 'propuestas', 'compromisos', 'kit', 'splash', 'privacidad']
-end
+pages = ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'splash', 'privacidad', 'mapa-d10']
 
 pages.each do |name|
 	File.open(root+name+".html") do |f|
@@ -89,17 +87,17 @@ pages.each do |name|
 		headerTemp = header.gsub(/{{title}}/, title)
 		html.gsub!(/---.*?---/m, '')
 
-		unless (File.exists?(publicDir+name) or (name=='index'))
-			Dir.mkdir(publicDir+name)
-		end
-
 		headerNavbar = headerTemp
 		unless (name == 'index') or (name == 'splash')
 			headerNavbar = headerTemp + navbar
 		end
 
-		publicHtml = publicDir+(
-				(name == 'index') or ($OPT[:splashOnly] && name == 'splash')  ?
+		unless (File.exists?(publicDir+name) or (name=='index') or (name=='splash'))
+			Dir.mkdir(publicDir+name)
+		end
+
+		publicHtml = (name == 'splash' ? publicDir.gsub(/test\//,'') : publicDir)+(
+				(name == 'index' or name=='splash') ?
 					'index' :
 					(name+'/index')
 		)+'.html'
