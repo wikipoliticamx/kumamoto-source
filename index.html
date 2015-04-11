@@ -2,6 +2,16 @@
 title: Pedro Kumamoto
 ---
 
+<div id="menu">
+	<a href="#inicio" data-menuanchor="inicio"><strong>Inicio</strong></a>
+	<a href="#video" data-menuanchor="video"><strong>Video</strong></a>
+	<a href="#nosotros" data-menuanchor="nosotros"><strong>Nosotros</strong></a>
+	<a href="#nos-asesoran" data-menuanchor="nos-asesoran"><strong><span>Nos</span> Asesoran</strong></a>
+	<a href="#lo-que-se-dice-de-nosotros" data-menuanchor="lo-que-se-dice-de-nosotros"><strong>Lo que se dice <span>de nosotros</span></strong></a>
+	<a href="#soy-pedro" data-menuanchor="soy-pedro"><strong><span>Soy</span> Pedro</strong></a>
+	<a href="#distrito-10" data-menuanchor="distrito-10"><strong>Distrito 10</strong></a>
+</div>
+
 <div id="fullpage" class="home">
 	<div class="section screen cover">
 		<img class="kumafoto" src="{{pathStart}}img/kuma/cover-100k.jpg" />
@@ -12,7 +22,7 @@ title: Pedro Kumamoto
 			<h1 class="kumamoto"><img src="{{pathStart}}img/type/kumamoto.png" />Kumamoto</h1>
 			<br />
 			<h3>
-				Candidato <span>Independiente</span> Diputado Local <b>Distrito 10</b> Zapopan
+				Candidato <strong>Independiente</strong> Diputado Local <b>Distrito 10</b> Zapopan
 			</h3>
 			<h2>
 				<strong>Ocupemos</strong> la ciudad,<br />
@@ -27,11 +37,7 @@ title: Pedro Kumamoto
 		<!--<a class="kitkumamoto" href="kit{{pathEnd}}">-->
 			<!--<img src="{{pathStart}}img/ui/stamp-black-with-text.png" />-->
 		<!--</a>-->
-		<div class="navbar">
-			<a class="principios"  href="principios{{pathEnd}}">Principios</a>
-			<a class="propuestas"  href="propuestas{{pathEnd}}">Propuestas</a>
-			<a class="compromisos" href="compromisos{{pathEnd}}">Compromisos</a>
-		</div>
+		{{navbar}}
 	</div>
 
 	<div class="section screen video">
@@ -53,17 +59,22 @@ title: Pedro Kumamoto
 			<h1>
 				<span class="los">Los</span>
 				<span class="muros">muros</span>
-				<span class="si">SÍ</span>
-				<span class="caen">caen</span>
+				<div>
+					<span class="si">SÍ</span>
+					<span class="caen">caen</span>
+				</div>
 			</h1>
 			<p>
-				Hay un muro en nuestro país...
+				Hay muros en nuestro país...
 				<span>
-					Es el muro que separa a los representantes de los representados,
-					el muro que nos mantiene fuera de la toma de decisiones,
-					el muro que resguarda el interes de pocos y anula el de muchos.
+					Los muros que separan a los representantes de los representados,
+					los que nos mantienen fuera de la toma de decisiones,
+					los que resguardan el interes de pocos y anulan el de muchos.
 				</span>
-				<strong>Pero ese muro tiene grietas, somos nosotros, no nos soltemos: los muros SÍ caen.</strong>
+				<span>
+					<a href="https://jacobpintle.wordpress.com/2015/04/08/la-politica-con-la-que-sone-ayer/" target="new" title="Paráfrasis de una bella frase de Jacob Pintle">"Los muros de un sistema político que solo se asoma para conseguir votos cada tres años y una vez obtenidos estos (o comprados) se repliega para repartir el botín que es México."</a>
+				</span>
+				<b>Pero esos muros tiene grietas, somos nosotros, no nos soltemos.</b>
 			</p>
 		</div>
 	</div>
@@ -79,85 +90,89 @@ title: Pedro Kumamoto
 			Nosotros
 			<a href="https://www.facebook.com/PedroKumamoto/app_208195102528120" target="new">(NOS FALTAS TÚ)</a>
 		</h1>
-		<div class="galaxia"></div>
+		<div class="galaxia">
+			<img class="azulejo-top" src="{{pathStart}}img/nosotros/azulejo-top-28k.png">
+			<img class="azulejo-bottom" src="{{pathStart}}img/nosotros/azulejo-bottom-28k.png">
+		</div>
 	</div>
 
 
 	<!--******** ASESORES *******-->
-	<!--<div class="section screen asesores">-->
-		<!--<h1>Nuestros <strong>Asesores</strong></h1>-->
-		<!--<div class="asesores">-->
-			<!--<div class="asesor">-->
-			<!--<img src="{{pathStart}}img/asesores/jesus-ibarra.jpg" />-->
-				<!--<div class="bio">-->
-					<!--<strong>Jesús Ibarra Cárdenas</strong>-->
-					<!--<em>Doctor en Derecho Público y experto en Derechos Humanos. Es profesor e investigador del ITESO.</em>-->
-				<!--</div>-->
-				<!--<p>-->
-					<!--Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.-->
-				<!--</p>-->
-			<!--</div>-->
-			<!--<div class="asesor">-->
-			<!--<img src="{{pathStart}}img/asesores/rogelio.jpg" />-->
-				<!--<div class="bio">-->
-					<!--<strong>Rogelio</strong>-->
-					<!--<em>Semblanza personal</em>-->
-				<!--</div>-->
-				<!--<p>-->
-					<!--Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.-->
-				<!--</p>-->
-			<!--</div>-->
-			<!--<div class="asesor">-->
-			<!--<img src="{{pathStart}}img/asesores/isabel-sepulveda.jpg" />-->
-				<!--<div class="bio">-->
-					<!--<strong>Isabel Sepúlveda</strong>-->
-					<!--<em>Semblanza personal</em>-->
-				<!--</div>-->
-				<!--<p>-->
-					<!--Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.-->
-				<!--</p>-->
-			<!--</div>-->
-			<!--<div class="asesor">-->
-			<!--<img src="{{pathStart}}img/asesores/mario-silva.jpg" />-->
-				<!--<div class="bio">-->
-					<!--<strong>Mario Silva</strong>-->
-					<!--<em>Semblanza personal</em>-->
-				<!--</div>-->
-				<!--<p>-->
-					<!--Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.-->
-				<!--</p>-->
-			<!--</div>-->
-			<!--<div class="asesor">-->
-			<!--<img src="{{pathStart}}img/asesores/negro-soto.jpg" />-->
-				<!--<div class="bio">-->
-					<!--<strong>Negro Soto</strong>-->
-					<!--<em>Semblanza personal</em>-->
-				<!--</div>-->
-				<!--<p>-->
-					<!--Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.-->
-				<!--</p>-->
-			<!--</div>-->
-			<!--<div class="asesor">-->
-			<!--<img src="{{pathStart}}img/asesores/jaime-preciado.jpg" />-->
-				<!--<div class="bio">-->
-					<!--<strong>Jaime Preciado</strong>-->
-					<!--<em>Semblanza personal</em>-->
-				<!--</div>-->
-				<!--<p>-->
-					<!--Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.-->
-				<!--</p>-->
-			<!--</div>-->
-		<!--</div>-->
-	<!--</div>-->
+	<div class="section screen asesores">
+		<h1>Nos <strong>Asesoran</strong></h1>
+		<div class="asesores">
+			<div class="asesor">
+			<img src="{{pathStart}}img/asesores/jesus-ibarra.jpg" />
+				<div class="bio">
+					<strong>Jesús Ibarra Cárdenas</strong>
+					<em>Doctor en Derecho Público y experto en Derechos Humanos. Es profesor e investigador del ITESO.</em>
+				</div>
+				<p>
+					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
+				</p>
+			</div>
+			<div class="asesor">
+			<img src="{{pathStart}}img/asesores/rogelio.jpg" />
+				<div class="bio">
+					<strong>Rogelio</strong>
+					<em>Semblanza personal</em>
+				</div>
+				<p>
+					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
+				</p>
+			</div>
+			<div class="asesor">
+			<img src="{{pathStart}}img/asesores/isabel-sepulveda.jpg" />
+				<div class="bio">
+					<strong>Isabel Sepúlveda</strong>
+					<em>Semblanza personal</em>
+				</div>
+				<p>
+					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
+				</p>
+			</div>
+			<div class="asesor">
+			<img src="{{pathStart}}img/asesores/mario-silva.jpg" />
+				<div class="bio">
+					<strong>Mario Silva</strong>
+					<em>Semblanza personal</em>
+				</div>
+				<p>
+					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
+				</p>
+			</div>
+			<div class="asesor">
+			<img src="{{pathStart}}img/asesores/negro-soto.jpg" />
+				<div class="bio">
+					<strong>Negro Soto</strong>
+					<em>Semblanza personal</em>
+				</div>
+				<p>
+					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
+				</p>
+			</div>
+			<div class="asesor">
+			<img src="{{pathStart}}img/asesores/jaime-preciado.jpg" />
+				<div class="bio">
+					<strong>Jaime Preciado</strong>
+					<em>Semblanza personal</em>
+				</div>
+				<p>
+					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
+				</p>
+			</div>
+		</div>
+	</div>
 
 	<!--******** MEDIOS *******-->
 	<div class="section screen medios">
 		<h1><strong>Lo que se dice</strong> de nosotros</h1>
-		<a class="carton" target="new" href="http://opinion.informador.com.mx/Cartuchos/2015/03/02/carton-del-dia-474/"><img src="{{pathStart}}img/medios/carton-qucho.jpg" /></a>
+		<a class="carton carton2mar" target="new" href="http://opinion.informador.com.mx/Cartuchos/2015/03/02/carton-del-dia-474/"><img src="{{pathStart}}img/medios/carton-qucho-2mar.jpg" /></a>
+		<a class="carton carton9abr" target="new" href="http://opinion.informador.com.mx/Cartuchos/2015/04/09/carton-del-dia-500/"><img src="{{pathStart}}img/medios/carton-qucho-9abr.jpg" /></a>
 		<div class="citas">
 			<div class="medio informador">
 				<div class="logo">
-					<img src="http://assets.informador.com.mx/img/layout/logo-Informador-header.png" />
+					<img src="{{pathStart}}img/medios/informador.png" />
 				</div>
 				<div class="copy">
 					<a href="http://opinion.informador.com.mx/Columnas/2015/02/26/wikipolitica/" target="new">
@@ -183,7 +198,7 @@ title: Pedro Kumamoto
 					</a>
 				</div>
 				<div class="copy">
-					<a href="http://www.milenio.com/firmas/frank_lozano/Kumamoto-Payaso_18_453134727.html" target="new" style="height:8em">
+					<a href="http://www.milenio.com/firmas/frank_lozano/Kumamoto-Payaso_18_453134727.html" target="new">
 						Pedro... goza de una ética personal probada... posee una formación académica sólida y un liderazgo con jóvenes universitarios... y finalmente, un discurso fresco y esperanzador para la democracia. <strong>La presencia de personas [como] Pedro Kumamoto, me hacen pensar que arrancamos bien.</strong>
 						<div class="source">
 							Frank Lozano <em>Entre Kumamoto y un Payaso</em> 26 de Enero 2015
@@ -198,7 +213,7 @@ title: Pedro Kumamoto
 					</a>
 				</div>
 				<div class="copy">
-					<a href="http://masgdl.com/maspormas-gdl/columnas-gdl/lo-que-se-de-pedro" style="height:7em" target="new">
+					<a href="http://masgdl.com/maspormas-gdl/columnas-gdl/lo-que-se-de-pedro" target="new">
 						<!--<img class="asesor" src="{{pathStart}}img/asesores/felipe-reyes.jpg" />-->
 						Ya se puede estar seguro de lo admirable del trabajo y el empeño con el que él y su equipo han buscado transformar la realidad que todos padecemos. <strong>Solo eso merece un “gracias” y una sincera felicitación.</strong>
 						<div class="source">
@@ -242,12 +257,21 @@ title: Pedro Kumamoto
 			</div>
 			<div class="copy">
 				<p>
-					Soy <strong>Pedro Kumamoto</strong>. En los últimos cinco años he participado en organizaciones de la sociedad civil para buscar e impulsar soluciones a los enormes retos y problemas públicos a los que nuestra sociedad se enfrenta. Fui presidente durante dos años de la Sociedad de Alumnos del ITESO, donde aprendí lo fundamental que es el trabajo en equipo y la enorme necesidad de unir esfuerzos con otras personas y grupos para generar cambios reales.
+				Soy <strong>Pedro Kumamoto</strong>, el primer candidato <b>sin partidos</b> al Congreso de Jalisco. Soy candidato independiente a diputado local para el distrito 10 de Zapopan porque creo que las personas debemos estar al centro de la política. 
 				</p>
 				<p>
-					Soy miembro de <strong>Wikipolítica</strong>, una red de personas <b>sin filiaciones partidistas</b> que queremos crear una nueva política ciudadana. Tomé la decisión de participar como candidato independiente debido a esta convicción compartida, a la creencia de que es tiempo de recuperar el gobierno para las personas y construir una forma de hacer política distinta.
+					Soy Gestor Cultural egresado del ITESO, donde fui el <b>presidente de la Sociedad de Alumnos</b> por dos años. Ahí impulsé la ratificación de mi mandato, la rendición de cuentas y la participación estudiantil activa.
 				</p>
-				<img class="todos" src="{{pathStart}}img/nosotros/wikiasamblea-bw.jpg" />
+				<p>
+					Trabajé un año en el <b>Observatorio Legislativo</b> en el ITESO, organismo técnico que evalúa al Congreso y a los diputados. Esto me dió contexto y perspectiva sobre los problemas del Congreso, pero más importante aún, ideas concretas sobre cómo resolverlos.
+				</p>
+				<p>
+					En los últimos años he participado en organizaciones de la sociedad civil para impulsar soluciones a los enormes retos que enfrenta nuestra comunidad. Soy miembro de <strong>Wikipolítica</strong>, una red de voluntarios <b>sin filiaciones partidistas</b> que busca mejorar la calidad de nuestra democracia. 
+				</p>
+				<p>
+					Quiero ser tu diputado porque es tiempo de recuperar el gobierno para las personas y construir una forma <b>honesta</b>, <b>colectiva</b> y <b>transparente</b> de hacer política.
+				</p>
+				<img class="todos" src="{{pathStart}}img/nosotros/wikiasamblea-bw-crop.jpg" />
 			</div>
 		</div>
 		<div class="instagram"> </div>
@@ -273,7 +297,7 @@ title: Pedro Kumamoto
 		</a>
 		<div class="goodbye">
 			<div class="contactos">
-				<h1>CONTÁCTANOS:</h1>
+				<h1><span>CONTÁCTANOS:</span></h1>
 				<span class="linea-kumamoto">
 					<img class="whatsapp" src="{{pathStart}}img/logos/whatsapp.png" /> <strong>Línea Kumamoto</strong> 33 1513 5549
 				</span>

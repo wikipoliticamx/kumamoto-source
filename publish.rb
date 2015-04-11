@@ -85,12 +85,9 @@ pages.each do |name|
 			title = title ? title[1].strip : '';
 		standalone = html.match(/{{standalone}}/)
 		headerTemp = header.gsub(/{{title}}/, title)
-		html.gsub!(/---.*?---/m, '')
+		html.gsub!(/---.*?---/m, '') #trim front matter
 
-		headerNavbar = headerTemp
-		unless (name == 'index') or (name == 'splash')
-			headerNavbar = headerTemp + navbar
-		end
+		html.sub!(/{{navbar}}/, navbar)
 
 		unless (File.exists?(publicDir+name) or (name=='index') or (name=='splash'))
 			Dir.mkdir(publicDir+name)
@@ -104,7 +101,7 @@ pages.each do |name|
 
 		File.open(publicHtml, "w+").write(
 			unless standalone
-				headerNavbar+html+footer
+				headerTemp + html + footer
 			else
 				html
 			end
