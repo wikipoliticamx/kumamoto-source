@@ -4,25 +4,14 @@ title: Mis Compromisos | Pedro Kumamoto
 
 <div id="menu">
 	<a href="#inicio" data-menuanchor="inicio"><strong>Inicio</strong></a>
-	<a href="#en-campaña" data-menuanchor="en-campaña"><strong><span>En</span> Campaña</strong></a>
-	<a href="#en-el-congreso" data-menuanchor="en-el-congreso"><strong><span>En el</span> Congreso</strong></a>
+	<a href="#en-campaña" data-menuanchor="en-campaña" class="uva"><strong><span>En</span> Campaña</strong></a>
+	<a href="#quien-iba-a-creer" data-menuanchor="quien-iba-a-creer"><strong><span>¿</span>Quién <span>iba a creer?</span></strong></a>
+	<a href="#en-el-congreso" data-menuanchor="en-el-congreso" class="esmeralda"><strong><span>En el</span> Congreso</strong></a>
 </div>
 
 <div id="fullpage" class="compromisos">
 	<div class="section screen toc">
-		<div class="header">
-			<div class="pedro-kumamoto">
-				<a href="{{pathStart}}{{test}}">
-					<img class="kumalogo" src="{{pathStart}}img/logos/kumalogo-sin-texto.png" />
-					<h1 class="pedro"><img src="{{pathStart}}img/type/pedro.png" /></h1>
-					<h1 class="kumamoto"><img src="{{pathStart}}img/type/kumamoto.png" /></h1>
-				</a>
-			</div>
-			<div class="where">
-				<h2 class="mis-propuestas">Mis <strong>Compromisos</strong></h2>
-			</div>
-		</div>
-
+		{{header}}
 		<p>
 			Esta candidatura independiente es parte de un esfuerzo por construir una <b>democracia real</b> en nuestro estado, donde sean las personas y no los partidos políticos o grupos de poder las que tomen las decisiones de la vida pública.
 		</p>
@@ -34,20 +23,20 @@ title: Mis Compromisos | Pedro Kumamoto
 		<div class="toc">
 			<a class="en-campanha" href="#en-campaña">
 				En <strong>campaña</strong>
-				<span><img src="{{pathStart}}img/compromisos/ocupantes.png" /></span>
-			</a>
-			<a class="en-el-congreso" href="#en-el-congreso">
-				<span><img src="{{pathStart}}img/compromisos/en-el-congreso.png" /></span>
+				<span><img src="{{pathStart}}img/compromisos/campaña.png" /></span>
+			</a><a class="en-el-congreso" href="#en-el-congreso">
+				<span><img src="{{pathStart}}img/compromisos/congreso.png" /></span>
 				En el <strong>congreso</strong>
 			</a>
 		</div>
 		{{navbar}}
 	</div>
-
-	<div class="section screen campaña">
+	<div class="section screen campanha">
 		<div class="text">
-			<h3>Mis compromisos</h3>
-			<h2>En <strong>campaña</strong></h2>
+			<h3>Mis <strong>compromisos</strong></h3>
+			<h2>
+				En <strong>campaña</strong>
+			</h2>
 			<ol>
 				<li>
 					<span class="summary">
@@ -107,19 +96,24 @@ title: Mis Compromisos | Pedro Kumamoto
 					</span>
 				</li>
 			</ol>
+			<div class="icono"><img src="{{pathStart}}img/compromisos/campaña.png" /></div>
 		</div>
 		<div class="fb">
-			<img src="{{pathStart}}img/compromisos/fb-mockup.jpg" />
+			<img src="{{pathStart}}img/fb-mockup.jpg" />
 		</div>
-		<div class="infografia">
-			<img src="{{pathStart}}img/compromisos/campanha.png" />
+	</div>
+
+	<div class="section screen bienvenida">
+		<img class="kuma-benji" src="{{pathStart}}img/compromisos/kuma-benji.jpg" style="width:2000px; height:1333px" />
+		<div class="copy">
+			<p>¿<b>Quién iba a creer</b> que lograríamos cada una de las exigencias para completar el registro?</p>
+			<p>¿Quién estaba dispuesto a creer que en cuarenta días juntaríamos siete mil 500 firmas tocando puerta tras puerta?</p>
+			<p>¿Quién iba a creer que necesitaríamos ejecutar nada más siete mil pesos para lograrlo?</p>
+			<p>A los que no creían y que aún no creen prefiero decirles que <strong>esto ya empezó</strong>, que podemos decir con seguridad que hoy ya está mejor y que va a estar mejor cuando decidan creer y se sumen</p>
 		</div>
 	</div>
 
 	<div class="section screen congreso">
-		<div class="infografia">
-			<img src="{{pathStart}}img/compromisos/en-congreso.jpg" />
-		</div>
 		<div class="text">
 			<h3>Mis compromisos</h3>
 			<h2>En el <strong>congreso</strong></h2>
@@ -145,7 +139,7 @@ title: Mis Compromisos | Pedro Kumamoto
 						<b>Renunciaré</b> a todo tipo de <strong>prestaciones</strong> mayores a las de la ley.
 					</span>
 					<span class="hidden">
-						<b>Renunciaré</b> a todo tipo de <strong>prestaciones</strong> mayores a las de cualquier trabajador. Actualmente los diputados tienen prestaciones como: Servicio médico, servicios privados de seguridad, pago de celulares y servicios de transporte. Creo que si los obreros, los empresarios y las distintas clases trabajadoras del país no cuentan con estos privilegios, yo no tengo por qué tenerlos.
+						Actualmente los diputados tienen prestaciones como: servicio médico, servicios privados de seguridad, pago de celulares y servicios de transporte. Creo que si los obreros, los empresarios y las distintas clases trabajadoras del país no cuentan con estos <b>privilegios</b>, yo no tengo por qué tenerlos.
 					</span>
 				</li>
 				<li>
@@ -177,7 +171,7 @@ title: Mis Compromisos | Pedro Kumamoto
 						<b>Haré públicos</b> los <strong>gastos</strong> de mi oficina legislativa.
 					</span>
 					<span class="hidden">
-						<b>Haré públicos</b> los <strong>gastos</strong> de mi oficina legislativa. Creo que la gente tiene derecho de saber en qué, por qué y para qué realizo los gastos en mi oficina legislativa. La transparencia debe ser una constante y una bandera de campaña.
+						Creo que la gente tiene derecho de saber en qué, por qué y para qué realizo los gastos en mi oficina legislativa. La transparencia debe ser una constante y una bandera de campaña.
 					</span>
 				</li>
 				<li>
@@ -193,7 +187,7 @@ title: Mis Compromisos | Pedro Kumamoto
 						<b>Tendré</b> un <strong>teléfono público</strong>.
 					</span>
 					<span class="hidden">
-						Actualmente, la comunicación con nuestros legisladores es algo inexistente, algo repleto de muros. Es por eso que <b>haré</b> público mi <strong>teléfono</strong>, <strong>redes sociales</strong> y <strong>mi correo</strong>. Esto con la finalidad de crear un enlace directo entre representante y representados, para que el diálogo y el debate puedan ser decisivos en mi toma de decisiones.
+						Actualmente, la comunicación con nuestros legisladores es algo inexistente, algo repleto de muros. Es por eso que haré <b>público</b> mi <strong>teléfono</strong>, <strong>redes sociales</strong> y <strong>mi correo</strong>. Esto con la finalidad de crear un enlace directo entre representante y representados, para que el diálogo y el debate puedan ser decisivos en mi toma de decisiones.
 					</span>
 				</li>
 				<li>
@@ -201,13 +195,14 @@ title: Mis Compromisos | Pedro Kumamoto
 						<b>Publicaré</b> <strong>informes de gestión</strong> semestrales.
 					</span>
 					<span class="hidden">
-						<b>Publicaré</b> mensualmente <strong>informes de gestión</strong>. Los habitantes tienen derecho a ver cuáles han sido los avances legislativos. Esto será de manera austera, priorizando la acción legislativa y no utilizándolo como un medio de propaganda que pueda ir en contra de la ley.
+						Los habitantes tienen derecho a ver cuáles han sido los <b>avances</b> legislativos. Esto será de manera austera, priorizando la acción legislativa y no utilizándolo como un medio de propaganda que pueda ir en contra de la ley.
 					</span>
 				</li>
 			</ol>
+			<div class="icono"><img src="{{pathStart}}img/compromisos/congreso.png" /></div>
 		</div>
 		<div class="fb">
-			<img src="{{pathStart}}img/compromisos/fb-mockup.jpg" />
+			<img src="{{pathStart}}img/fb-mockup.jpg" />
 		</div>
 	</div>
 </div>

@@ -1,8 +1,12 @@
 #!/usr/bin/env ruby
 require 'optparse'
 require 'rubygems'
+#require 'htmlentities'
+#require 'unicode'
 require 'iconv' unless String.method_defined?(:encode) #because http://stackoverflow.com/questions/2982677/ruby-1-9-invalid-byte-sequence-in-utf-8
 #ruby -run -ehttpd . -p8000
+
+#$KCODE = 'UTF-8'
 
 $OPT = { #Options
 	:mode=>'server'
@@ -23,8 +27,9 @@ root = '/Users/bex/Dropbox/prjcts/else/wikipolitica/WEB/kumamoto-source/' #Dir.p
 publicDir =  root.gsub(/kumamoto-source/, 'kumamoto-mx')+'test/'
 
 # smart defaults
-header = '<html><body>'
+head = '<html><body>'
 footer = '</body></html>'
+header = ''
 navbar = ''
 $pathStar = ''
 $pathEnd = ''
@@ -41,7 +46,7 @@ elsif $OPT[:mode] == 'serverless'
 end
 
 def parse str
-	if $OPT[:mode] == 'github'
+	if $OPT[:mode] == 'server'
 		str.gsub!(/{{onlineOnly(Start|End)}}/, '')
 	else
 		str.gsub!(/{{onlineOnlyStart}}[\s\S]*?{{onlineOnlyEnd}}/x, '')
@@ -55,10 +60,10 @@ end
 
 def readAndEncode f
 	if String.method_defined?(:encode)
-		out = f.read.encode('UTF-8', 'UTF-8', :invalid => :replace)
-	else
-		ic = Iconv.new('UTF-8', 'UTF-8//IGNORE')
-		out = ic.iconv(f.read)
+		out = f.read.encode('UTF-8', 'UTF-8', :invalid => :replace, :replace => '')
+	#else
+		#ic = Iconv.new('UTF-8', 'UTF-8//IGNORE')
+		#out = ic.iconv(f.read)
 	end
 	parse out
 end
@@ -66,8 +71,8 @@ end
 puts 'Publishing for ' + $OPT[:mode]+".\n\n"
 puts 'Public Dir: '+ publicDir
 
-File.open(root+"header.html") do |f|
-	header = readAndEncode( f )
+File.open(root+"head.html") do |f|
+	head = readAndEncode( f )
 end
 File.open(root+"footer.html") do |f|
 	footer = readAndEncode( f )
@@ -75,19 +80,23 @@ end
 File.open(root+"navbar.html") do |f|
 	navbar = readAndEncode( f )
 end
+File.open(root+"header.html") do |f|
+	header = readAndEncode( f )
+end
 
 pages = ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'splash', 'privacidad', 'mapa-d10']
 
 pages.each do |name|
 	File.open(root+name+".html") do |f|
 		html = readAndEncode( f )
+		
 		title = html.match(/^\s*title:(.*)$/);
 			title = title ? title[1].strip : '';
 		standalone = html.match(/{{standalone}}/)
-		headerTemp = header.gsub(/{{title}}/, title)
+		headTemp = head.gsub(/{{title}}/, title)
 		html.gsub!(/---.*?---/m, '') #trim front matter
 
-		html.sub!(/{{navbar}}/, navbar)
+		html = html.sub(/{{navbar}}/, navbar).sub(/{{header}}/, header)
 
 		unless (File.exists?(publicDir+name) or (name=='index') or (name=='splash'))
 			Dir.mkdir(publicDir+name)
@@ -101,7 +110,7 @@ pages.each do |name|
 
 		File.open(publicHtml, "w+").write(
 			unless standalone
-				headerTemp + html + footer
+				headTemp + html + footer
 			else
 				html
 			end
