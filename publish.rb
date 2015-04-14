@@ -84,7 +84,7 @@ File.open(root+"header.html") do |f|
 	header = readAndEncode( f )
 end
 
-pages = ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'splash', 'privacidad', 'mapa-d10']
+pages = ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'splash', 'privacidad']
 
 pages.each do |name|
 	File.open(root+name+".html") do |f|

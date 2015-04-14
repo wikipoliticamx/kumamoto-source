@@ -30,17 +30,17 @@ title: Pedro Kumamoto
 			</h2>
 		</div>
 		<div class="redes">
-			<a class="fb" href="https://www.facebook.com/PedroKumamoto" /><img src="{{pathStart}}img/logos/fb.png" /></a>
-			<a class="twitter" href="https://twitter.com/pkumamoto" /><img src="{{pathStart}}img/logos/twitter.png" /></a>
-			<a class="instagram" href="https://instagram.com/pkumamoto/" /><img src="{{pathStart}}img/logos/instagram.png" /></a>
+			<a class="fb" href="https://www.facebook.com/PedroKumamoto" target="new" /><img src="{{pathStart}}img/logos/fb.png" /></a>
+			<a class="twitter" href="https://twitter.com/pkumamoto" target="new" /><img src="{{pathStart}}img/logos/twitter.png" /></a>
+			<a class="instagram" href="https://instagram.com/yovotokumamoto" target="new" /><img src="{{pathStart}}img/logos/instagram.png" /></a>
 		</div>
-		<a class="kitkumamoto" href="kit{{pathEnd}}">
-			<img src="{{pathStart}}img/ui/stamp-black-with-text.png" />
-		</a>
+		<!--<a class="kitkumamoto" href="kit{{pathEnd}}">-->
+			<!--<img src="{{pathStart}}img/ui/stamp-black-with-text.png" />-->
+		<!--</a>-->
 		{{navbar}}
 	</div>
 
-	<div class="section screen video">
+	<div class="section screen video" style="background-image:url({{pathStart}}img/video/bkg.png)">
 		<div class="theater">
 			<div id="ytplayer"></div>
 			<!--<iframe id="ytplayer" type="text/html" width="720" height="405"-->
@@ -48,13 +48,15 @@ title: Pedro Kumamoto
 			<div class="sidebar">
 				<div class="soundToggle muted"><img src="{{pathStart}}img/ui/muteSound.png" /></div>
 				<div class="thumbs">
-					<img data-youtube-2="CkMJtORCr80" data-youtube="pjDxV22IZuY" src="{{pathStart}}img/dot.png" style="background:url({{pathStart}}img/video/sprite-stills.jpg) 0 0" />
-					<img data-youtube-2="CkMJtORCr80" data-youtube="GHEFOsKO5uM" src="{{pathStart}}img/dot.png" style="background:url({{pathStart}}img/video/sprite-stills.jpg) 0 111px" />
-					<img data-youtube="Pk8pTDPtPjQ" src="{{pathStart}}img/dot.png" style="background:url({{pathStart}}img/video/sprite-stills.jpg) 0 222px" />
-					<img data-youtube="xS6Ne5SbvpU" src="{{pathStart}}img/dot.png" style="background:url({{pathStart}}img/video/sprite-stills.jpg) 0 333px" />
+					<img data-youtube="cbOnIDkG3UQ" src="{{pathStart}}img/dot.png" style="background:url({{pathStart}}img/video/sprite-stills.jpg) 0 0" />
+					<img data-youtube="pjDxV22IZuY" src="{{pathStart}}img/dot.png" style="background:url({{pathStart}}img/video/sprite-stills.jpg) 0 111px" />
+					<img data-youtube="GHEFOsKO5uM" src="{{pathStart}}img/dot.png" style="background:url({{pathStart}}img/video/sprite-stills.jpg) 0 222px" />
+					<img data-youtube="Pk8pTDPtPjQ" src="{{pathStart}}img/dot.png" style="background:url({{pathStart}}img/video/sprite-stills.jpg) 0 333px" />
+					<img data-youtube="xS6Ne5SbvpU" src="{{pathStart}}img/dot.png" style="background:url({{pathStart}}img/video/sprite-stills.jpg) 0 444px" />
 				</div>
 			</div>
 		</div>
+		<!--<img src="{{pathStart}}img/video/bkg.jpg" class="bkg" />-->
 		<div class="copy">
 			<h1>
 				<span class="los">Los</span>
@@ -99,67 +101,227 @@ title: Pedro Kumamoto
 
 	<!--******** ASESORES *******-->
 	<div class="section screen asesores">
+		<img class="asesores-bkg" src="{{pathStart}}img/asesores/bkg.png">
 		<h1>Nos <strong>Asesoran</strong></h1>
 		<div class="asesores">
-			<div class="asesor">
-			<img src="{{pathStart}}img/asesores/jesus-ibarra.jpg" />
-				<div class="bio">
-					<strong>Jesús Ibarra Cárdenas</strong>
-					<em>Doctor en Derecho Público y experto en Derechos Humanos. Es profesor e investigador del ITESO.</em>
+			<div class="center">
+				<div class="asesor card">
+					<a class="twitter" href="https://twitter.com/guadalupemorfin" target="new" /><img src="{{pathStart}}img/logos/twitter.png" /></a>
+					<div class="portrait">
+						<img src="{{pathStart}}img/asesores/guadalupe-morfin.jpg" />
+					</div>
+					<div class="bio">
+						<span class="name">Guadalupe <strong>Morfín</strong></span>
+						<em>
+							<a href="http://opinion.informador.com.mx/Rotonda/author/guadalupemorfin/" target="new">Columnista en El Informador.</a> Presidió la <a href="http://cedhj.org.mx" target="new">CEDHJ</a> y fue la comisionada antiviolencia en Ciudad Juárez.
+						</em>
+					</div>
 				</div>
-				<p>
-					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
-				</p>
+				<div class="asesor">
+					<a class="twitter" href="https://twitter.com/ebohorquez" target="new" /><img src="{{pathStart}}img/logos/twitter.png" /></a>
+					<div class="portrait">
+						<img src="{{pathStart}}img/asesores/eduardo-bohorquez.jpg" />
+					</div>
+					<div class="bio">
+						<span class="name">Eduardo <strong>Bohórquez</strong></span>
+						<em>Maestro en Estudios del Desarrollo y Director General de <a href="http://www.tm.org.mx/" target="new">Transparencia Mexicana</a></em>
+					</div>
+				</div>
+				<div class="asesor">
+					<div class="portrait">
+						<img src="{{pathStart}}img/asesores/jaime-preciado.jpg" />
+					</div>
+					<div class="bio">
+						<span class="name">Jaime <strong>Preciado</strong></span>
+						<em>
+							Experto en geografía política, análisis de políticas sociales y geografía electoral mexicana.
+						</em>
+					</div>
+				</div>
+				<div class="asesor">
+					<div class="portrait">
+						<img src="{{pathStart}}img/asesores/monica-unda.jpg" />
+					</div>
+					<div class="bio">
+						<span class="name">Mónica <strong>Unda</strong></span>
+						<em>
+							Doctora en desarrolo y experta en temas de finanzas públicas e historia fiscal mexicana.
+						</em>
+					</div>
+				</div>
+				<div class="asesor">
+					<div class="portrait">
+						<img src="{{pathStart}}img/asesores/rosanna-reguillo.jpg" />
+					</div>
+					<div class="bio">
+						<span class="name">Rosanna <strong>Reguillo</strong></span>
+						<em>Doctora en ciencias sociales especializada en culturas urbanas y juveniles.</em>
+					</div>
+				</div>
+				<div class="asesor">
+					<a class="twitter" href="https://twitter.com/albayardo" target="new" /><img src="{{pathStart}}img/logos/twitter.png" /></a>
+					<div class="portrait">
+						<img src="{{pathStart}}img/asesores/alberto-bayardo.jpg" />
+					</div>
+					<div class="bio">
+						<span class="name">Alberto <strong>Bayardo</strong></span>
+						<em>
+							Filósofo y maestro en Ciencia Política. 
+							Consejero ciudadano en la <a href="http://cedhj.org.mx" target="new">CEDHJ</a> y el <a href="http://www.zapopan.gob.mx/transparencia/consejos-y-comites-municipales/cctransparencia/">CCTZ</a>.
+						</em>
+					</div>
+				</div>
+				<div class="asesor">
+					<div class="portrait">
+						<img src="{{pathStart}}img/asesores/adriana-pantoja.jpg" />
+					</div>
+					<div class="bio">
+						<span class="name">Adriana <strong>Pantoja</strong></span>
+						<em>
+							Coordinadora de la Licenciatura en Gestión Cultural en el ITESO.
+							Promotora y asesora en FIL, CONACULTA y OEI.
+						</em>
+					</div>
+				</div>
 			</div>
-			<div class="asesor">
-			<img src="{{pathStart}}img/asesores/rogelio.jpg" />
-				<div class="bio">
-					<strong>Rogelio</strong>
-					<em>Semblanza personal</em>
+			<div class="left">
+				<div class="asesor">
+					<p>
+						&laquo;Kuma y su valioso equipo significan para mí la posibilidad más <b>real</b> de hacer política en la calle. ¡Todos mis recursos para que lo logre!&raquo;
+					</p>
+					<div class="card" style="padding-left:1em">
+						<a class="twitter" href="https://twitter.com/negrosoto" target="new" /><img src="{{pathStart}}img/logos/twitter.png" /></a>
+						<div class="bio">
+							<span class="name">"El Negro" <strong>Soto</strong></span>
+							<em>
+								Filósofo activista conocido por su liderazgo en diversos movimientos y cuestionamiento ciudadano frente a las autoridades.
+							</em>
+						</div>
+						<div class="portrait">
+							<img src="{{pathStart}}img/asesores/negro-soto.jpg" />
+						</div>
+					</div>
 				</div>
-				<p>
-					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
-				</p>
+				<div class="asesor">
+					<p>
+						Necesitamos instalar formas de trabajo en <b>red</b>, no en pirámide.
+					</p>
+					<div class="card">
+						<a class="twitter" href="https://twitter.com/hektanon" target="new" /><img src="{{pathStart}}img/logos/twitter.png" /></a>
+						<div class="bio">
+							<span class="name">Hector <strong>Castañón</strong></span>
+							<em>
+								Especialista en planeación, gestión del desarrollo regional, y medio ambiente.
+							</em>
+						</div>
+						<div class="portrait">
+							<img src="{{pathStart}}img/asesores/hector-castanhon.jpg" />
+						</div>
+					</div>
+				</div>
+				<div class="asesor">
+					<p>
+						&laquo;La campaña de Pedro, <b>vale</b> por lo que vale la lucha de jóvenes, unidos con mexicanos provenientes de todo el espectro social, para romper inercias de corrupción, ignorancia, autoritarismo e ineptitud en el ejercicio de poder; vale la pena apoyarla.&raquo;
+					</p>
+					<div class="card">
+						<div class="bio">
+							<span class="name">Nacho <strong>Román</strong></span>
+							<em>
+								Doctor en Economía experto en la problemática socioeconómica, particularmente la del empleo.
+								<!--<a href="http://www.investigadores.iteso.mx/detalleinv.php?id_inv=65" target="new">Profesor e investigador del ITESO</a>.-->
+							</em>
+						</div>
+						<div class="portrait">
+							<img src="{{pathStart}}img/asesores/nacho-roman.jpg" />
+						</div>
+					</div>
+				</div>
+				<div class="asesor">
+					<p>
+					&laquo;Me gusta el proyecto de Kumamoto y la manera de trabajar con su equipo. Necesitamos un cambio. Tengo <b>confianza</b> en los jóvenes y en que trabajarán diferente.&raquo;
+					</p>
+					<div class="card">
+						<div class="bio">
+							<span class="name">Ana <strong>Rentería</strong></span>
+							<em>
+								Profesora e investigadora en Arquitectura y Urbanismo del <a href="http://www.cuaad.udg.mx/" target="new">CUAAD</a>.
+							</em>
+						</div>
+						<div class="portrait">
+							<img src="{{pathStart}}img/asesores/ana-renteria.jpg" />
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="asesor">
-			<img src="{{pathStart}}img/asesores/isabel-sepulveda.jpg" />
-				<div class="bio">
-					<strong>Isabel Sepúlveda</strong>
-					<em>Semblanza personal</em>
+			<div class="right">
+				<div class="asesor">
+					<div class="card">
+						<a class="twitter" href="https://twitter.com/lamagamayor" target="new" /><img src="{{pathStart}}img/logos/twitter.png" /></a>
+						<div class="portrait">
+							<img src="{{pathStart}}img/asesores/margarita-sierra.jpg" />
+						</div>
+						<div class="bio">
+							<span class="name">Margarita <strong>Sierra</strong></span>
+							<em>
+								Especialista en temas de participación ciudadana. Impulsora del Congreso Ciudadano de Jalisco y de la plataforma Haz Tu Ley.
+							</em>
+						</div>
+					</div>
+					<p>
+						&laquo;Kumamoto es el candidato que <b>abre camino</b> a una democracia de ciudadanos y ciudadanas y no de partidos. Es una muestra del poder ciudadano y es un privilegio trabajar con él.&raquo;
+					</p>
 				</div>
-				<p>
-					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
-				</p>
-			</div>
-			<div class="asesor">
-			<img src="{{pathStart}}img/asesores/mario-silva.jpg" />
-				<div class="bio">
-					<strong>Mario Silva</strong>
-					<em>Semblanza personal</em>
+				<div class="asesor">
+					<div class="card">
+						<a class="twitter" href="https://twitter.com/AntonioOrtugno" target="new" /><img src="{{pathStart}}img/logos/twitter.png" /></a>
+						<div class="portrait">
+							<img src="{{pathStart}}img/asesores/antonio-ortunho.jpg" />
+						</div>
+						<div class="bio">
+							<span class="name">Antonio <strong>Ortuño</strong></span>
+							<em>
+								<a href="http://es.wikipedia.org/wiki/Antonio_Ortu%C3%B1o" target="new">Escritor y periodista.</a><br>
+								Editor en los periódicos Siglo 21, Público, Milenio y El Informador.
+							</em>
+						</div>
+					</div>
+					<p>
+						&laquo;La independencia es una palabra fundamental. Una candidatura independiente es una posibilidad de <b>salirse del guión</b> y construir con y desde la comunidad.&raquo;
+					</p>
 				</div>
-				<p>
-					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
-				</p>
-			</div>
-			<div class="asesor">
-			<img src="{{pathStart}}img/asesores/negro-soto.jpg" />
-				<div class="bio">
-					<strong>Negro Soto</strong>
-					<em>Semblanza personal</em>
+				<div class="asesor">
+					<div class="card">
+						<div class="portrait">
+							<img src="{{pathStart}}img/asesores/jesus-arreola.jpg" />
+						</div>
+						<div class="bio">
+							<span class="name">Jesús <strong>Arreola</strong></span>
+							<em>
+								Doctor en Planeación Urbana y Transporte. Urbanista del <a href="http://www.cuaad.udg.mx/" target="new">CUAAD</a>.
+							</em>
+						</div>
+					</div>
+					<p>
+						&laquo;En el contexto de un país que ya no puede confiar en el sistema de partidos tradicionales, considero que es importante apoyar proyectos e iniciativas de grupos de personas jóvenes y <b>bien preparadas</b>, que traen nuevos aires a esta metrópoli y en general al país.&raquo;
+					</p>
 				</div>
-				<p>
-					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
-				</p>
-			</div>
-			<div class="asesor">
-			<img src="{{pathStart}}img/asesores/jaime-preciado.jpg" />
-				<div class="bio">
-					<strong>Jaime Preciado</strong>
-					<em>Semblanza personal</em>
+				<div class="asesor">
+					<div class="card">
+						<div class="portrait">
+							<img src="{{pathStart}}img/asesores/jesus-ibarra.jpg" />
+						</div>
+						<div class="bio">
+							<span class="name">Jesús <strong>Ibarra</strong></span>
+							<em>
+								Doctor en Derecho Público y experto en Derechos Humanos.
+								<!--<a href="http://www.investigadores.iteso.mx/detalleinvB.php?id_inv=151" target="new">Profesor e investigador del ITESO</a>.-->
+							</em>
+						</div>
+					</div>
+					<p>
+						&laquo;Porque la <b>dignidad</b> de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.&raquo;
+					</p>
 				</div>
-				<p>
-					Porque la dignidad de la política sí es posible y por los recursos morales de Kumamoto ausentes en los demás.
-				</p>
 			</div>
 		</div>
 	</div>
@@ -194,7 +356,7 @@ title: Pedro Kumamoto
 			<div class="medio milenio">
 				<div class="logo">
 					<a href="http://www.milenio.com/firmas/frank_lozano/Kumamoto-Payaso_18_453134727.html" target="new">
-						<img src="{{pathStart}}img/medios/milenio.png" />
+						<img src="{{pathStart}}img/medios/milenio.png" style="width:20em" />
 					</a>
 				</div>
 				<div class="copy">
@@ -206,22 +368,43 @@ title: Pedro Kumamoto
 					</a>
 				</div>
 			</div>
-			<div class="medio maspormas">
+			<div class="medio yonofui">
 				<div class="logo">
-					<a href="http://masgdl.com/maspormas-gdl/columnas-gdl/lo-que-se-de-pedro" target="new">
-						<img src="{{pathStart}}img/medios/mas-por-mas.jpg" />
+					<a href="https://twitter.com/YONOFUI/" target="new">
+						Gonzalo Ibarra <b>@yonofui</b>
+						<img src="{{pathStart}}img/medios/yonofui.jpg" />
 					</a>
 				</div>
 				<div class="copy">
-					<a href="http://masgdl.com/maspormas-gdl/columnas-gdl/lo-que-se-de-pedro" target="new">
-						<!--<img class="asesor" src="{{pathStart}}img/asesores/felipe-reyes.jpg" />-->
-						Ya se puede estar seguro de lo admirable del trabajo y el empeño con el que él y su equipo han buscado transformar la realidad que todos padecemos. <strong>Solo eso merece un “gracias” y una sincera felicitación.</strong>
+					<a href="https://twitter.com/YONOFUI/status/587457040223567873" target="new">
+						<img class="twitter" src="{{pathStart}}img/logos/twitter.png" />
+						<strong>Creo que @pkumamoto está haciendo la mejor campaña del país,</strong> ejemplazo democrático. Valió la joda la #ReformaPolíticaYA #LosMurosSíCaen
+					</a>
+					<a href="https://twitter.com/YONOFUI/status/587458002690539522" target="new">
+						<img class="twitter" src="{{pathStart}}img/logos/twitter.png" />
+						Lo mejor del caso #Kumamoto es q <strong>no es una solo persona,</strong> sino que representa el trabajo de un grupo de jóvenes de alta calidad democrática.
 						<div class="source">
-							Felipe Reyes, <em>Lo que sé de Pedro</em>, 27 de Febrero 2015
+							12 de Abril 2015, 8:27 PM
 						</div>
 					</a>
 				</div>
 			</div>
+			<!--<div class="medio maspormas">-->
+				<!--<div class="logo">-->
+					<!--<a href="http://masgdl.com/maspormas-gdl/columnas-gdl/lo-que-se-de-pedro" target="new">-->
+						<!--<img src="{{pathStart}}img/medios/mas-por-mas.jpg" style="margin-right:1.2em" />-->
+					<!--</a>-->
+				<!--</div>-->
+				<!--<div class="copy">-->
+					<!--<a href="http://masgdl.com/maspormas-gdl/columnas-gdl/lo-que-se-de-pedro" target="new">-->
+						<!--[><img class="asesor" src="{{pathStart}}img/asesores/felipe-reyes.jpg" /><]-->
+						<!--Ya se puede estar seguro de lo admirable del trabajo y el empeño con el que él y su equipo han buscado transformar la realidad que todos padecemos. <strong>Solo eso merece un “gracias” y una sincera felicitación.</strong>-->
+						<!--<div class="source">-->
+							<!--Felipe Reyes, <em>Lo que sé de Pedro</em>, 27 de Febrero 2015-->
+						<!--</div>-->
+					<!--</a>-->
+				<!--</div>-->
+			<!--</div>-->
 		</div>
 		<div class="logos">
 			<a target="new" href="javascript:void()" class="void"><img src="{{pathStart}}img/medios/sin-filtro.jpg" /></a>
@@ -253,11 +436,12 @@ title: Pedro Kumamoto
 		<h1><strong>SOY</strong> PEDRO</h1>
 		<div class="yo-kuma">
 			<div class="foto">
-				<img class="soy-pedro" src="{{pathStart}}img/kuma/soy-pedro.jpg" style="width:749px; height:734px" />
+				<!--<img class="soy-pedro" src="{{pathStart}}img/kuma/soy-pedro.jpg" style="width:749px; height:734px" />-->
+				<img class="soy-pedro" src="{{pathStart}}img/kuma/yo-kuma-exterior-small-2.jpg" style="width:500px; height:749px" />
 			</div>
 			<div class="copy">
 				<p>
-				Soy <strong>Pedro Kumamoto</strong>, el primer candidato <b>sin partidos</b> al Congreso de Jalisco. Soy candidato independiente a diputado local para el distrito 10 de Zapopan porque creo que las personas debemos estar al centro de la política. 
+				Soy <strong>Pedro Kumamoto</strong>, el <span style="font-weight:bold">primer</span> candidato <b>sin partidos</b> al Congreso de Jalisco. Soy candidato independiente a diputado local para el distrito 10 de Zapopan porque creo que las personas debemos estar al centro de la política. 
 				</p>
 				<p>
 					Soy Gestor Cultural egresado del ITESO, donde fui el <b>presidente de la Sociedad de Alumnos</b> por dos años. Ahí impulsé la ratificación de mi mandato, la rendición de cuentas y la participación estudiantil activa.
@@ -293,7 +477,7 @@ title: Pedro Kumamoto
 			</div>
 		</div>
 		<a class="mapa" title="Haz click para ver el Distrito 10 en Google Maps" target="new" href="https://www.google.com/maps/d/viewer?mid=zSGSHyOMWpbM.kz1ta9zJH7wc">
-			<img src="{{pathStart}}img/mapas/d10-rectangular-compressed.jpg" / >
+			<img src="{{pathStart}}img/mapas/d10-rectangular-compressed.jpg" style="width:1706px; height:1052px" / >
 		</a>
 	</div>
 </div>
