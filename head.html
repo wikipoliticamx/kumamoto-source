@@ -48,5 +48,23 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
+
+	<!--FB-->
+	<meta property="og:title"        content="{{title}}" />
+	<meta property="og:site_name"    content="Kumamoto.mx" />
+	<meta property="og:url"          content="http://kumamoto.mx/{{test}}{{og_url}}" />
+	<meta property="og:image"        content="http://kumamoto.mx/{{og_image}}" />
+	<meta property="og:type"         content="website" />
+	<meta property="og:description"  content="{{og_description}}" />
+	<meta property="og:locale"       content="es_LA" />
+	<meta property="fb:app_id"       content="951659831540752" />
 </head>
 <body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.3&appId=951659831540752";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
