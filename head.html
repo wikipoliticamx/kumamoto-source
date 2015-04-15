@@ -21,13 +21,14 @@
 
 	<script type="text/javascript" src="{{pathStart}}js/animate-min.js"></script>
 	<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>-->
-	<script type="text/javascript" src="{{pathStart}}js/ScrollMagic.min.js"></script>
+	<!--<script type="text/javascript" src="{{pathStart}}js/ScrollMagic.min.js"></script>-->
 
 	<!-- OpenTip -->
 	<script type="text/javascript" src="{{pathStart}}js/opentip-jquery.min.js"></script>
 	<link href="{{pathStart}}css/opentip.css" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript" src="{{pathStart}}js/code.js"></script>
+	<script> KUMA.video.youtube(); </script>
 
 	<!-- favicon -->
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -47,30 +48,5 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
-
-	<!-- YouTube -->
-	<script>
-		// Load the IFrame Player API code asynchronously.
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/player_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-		// Replace the 'ytplayer' element with an <iframe> and
-		// YouTube player after the API code downloads.
-		function onYouTubeIframeAPIReady() {
-			KUMA.player = new YT.Player('ytplayer', {
-				videoId: $('.screen.video .sidebar .thumbs img:first').data('youtube'),
-				playerVars:{
-					controls:'0',
-					showinfo:'0',
-				},
-				events:{
-					onReady:KUMA.video.ready,
-					onStateChange:KUMA.video.change
-				}
-			});
-		}
-	</script>
 </head>
 <body>
