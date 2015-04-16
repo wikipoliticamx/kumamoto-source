@@ -28,7 +28,10 @@
 	<link href="{{pathStart}}css/opentip.css" rel="stylesheet" type="text/css" />
 
 	<script type="text/javascript" src="{{pathStart}}js/code.js"></script>
-	<script> KUMA.video.youtube(); </script>
+	<script>
+		KUMA.video.youtube(); 
+		KUMA.root = 'http://kumamoto.mx/{{test}}';
+	</script>
 
 	<!-- favicon -->
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -61,10 +64,12 @@
 </head>
 <body>
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.3&appId=951659831540752";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.3&appId=951659831540752";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
