@@ -10,7 +10,8 @@ require 'iconv' unless String.method_defined?(:encode) #because http://stackover
 #$KCODE = 'UTF-8'
 
 $OPT = { #Options
-	:mode=>'server'
+	:mode=>'server',
+	:test=>false
 	#:splashOnly=>false
 }
 
@@ -19,13 +20,16 @@ OptionParser.new do|opts|
 	opts.on( '-m STR', '--mode STR', 'Publish with online paths. Default false.' ) do |m|
 		$OPT[:mode] = m
 	end
+	opts.on( '-t', '--test', 'Publish whole site under test subdirectory.' ) do
+		$OPT[:test] = true
+	end
 	#opts.on( '--splashOnly', 'Only publish the splash page.' ) do |m|
 		#$OPT[:splashOnly] = true
 	#end
 end.parse!
 
 root = '/Users/bex/Dropbox/prjcts/else/wikipolitica/WEB/kumamoto-source/' #Dir.pwd+'/'
-publicDir =  root.gsub(/kumamoto-source/, 'kumamoto-mx')+'test/'
+publicDir =  root.gsub(/kumamoto-source/, 'kumamoto-mx')+($OPT[:test] ? 'test/' : '')
 
 # smart defaults
 head = '<html><body>'
@@ -58,7 +62,7 @@ def parse str
 	end
 	str.gsub!(/{{pathStart}}/, $pathStart)
 	str.gsub!(/{{pathEnd}}/, $pathEnd)
-	str.gsub!(/{{test}}/, 'test/')
+	str.gsub!(/{{test}}/, $OPT[:test] ? 'test/' : '')
 	str
 end
 
@@ -147,7 +151,7 @@ pages.each do |page|
 
 		html = html.sub(/{{navbar}}/, navbar).sub(/{{header}}/, header)
 
-		unless (File.exists?(publicDir+page) or (page=='index') or (page=='splash'))
+		unless (File.exists?(publicDir+page) or (page=='index'))
 			Dir.mkdir(publicDir+page)
 		end
 
@@ -172,11 +176,19 @@ pages.each do |page|
 			end
 		end
 
-		publicHtml = (page == 'splash' ? publicDir.gsub(/test\//,'') : publicDir)+(
-				(page == 'index' or page=='splash') ?
-					'index' :
-					(page+'/index')
-		)+'.html'
+		if($OPT[:test])
+			publicHtml = (page == 'splash' ? publicDir.gsub(/test\//,'') : publicDir)+(
+					(page == 'index' or page=='splash') ?
+						'index' :
+						(page+'/index')
+			)+'.html'
+		else
+			publicHtml = publicDir+(
+					(page == 'index') ?
+						'index' :
+						(page+'/index')
+			)+'.html'
+		end
 
 		File.open(publicHtml, "w+").write(
 			unless standalone
