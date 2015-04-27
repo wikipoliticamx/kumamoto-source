@@ -20,9 +20,9 @@ OptionParser.new do|opts|
 	opts.on( '-m STR', '--mode STR', 'Publish with online paths. Default false.' ) do |m|
 		$OPT[:mode] = m
 	end
-	opts.on( '-t', '--test', 'Publish whole site under test subdirectory.' ) do
-		$OPT[:test] = true
-	end
+	#opts.on( '-t', '--test', 'Publish whole site under test subdirectory.' ) do
+		#$OPT[:test] = true
+	#end
 	#opts.on( '--splashOnly', 'Only publish the splash page.' ) do |m|
 		#$OPT[:splashOnly] = true
 	#end
@@ -125,7 +125,7 @@ sectionData = {
 	'en-el-congreso'=>['En el congreso', 'Queremos reivindicar el quehacer político a través de las formas y los fondos. Estos son mis compromisos durante mi periodo legislativo.']
 }
 
-pages = ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'splash', 'privacidad']
+pages = ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'privacidad']
 
 pages.each do |page|
 	File.open(root+page+".html") do |f|
@@ -176,19 +176,18 @@ pages.each do |page|
 			end
 		end
 
-		if($OPT[:test])
-			publicHtml = (page == 'splash' ? publicDir.gsub(/test\//,'') : publicDir)+(
-					(page == 'index' or page=='splash') ?
-						'index' :
-						(page+'/index')
-			)+'.html'
-		else
-			publicHtml = publicDir+(
-					(page == 'index') ?
-						'index' :
-						(page+'/index')
-			)+'.html'
-		end
+		#if($OPT[:test])
+			#publicHtml = (page == 'splash' ? publicDir.gsub(/test\//,'') : publicDir)+(
+					#(page == 'index' or page=='splash') ?
+						#'index' :
+						#(page+'/index')
+			#)+'.html'
+		#else
+		publicHtml = publicDir+(
+				(page == 'index') ?
+					'index' :
+					(page+'/index')
+		)+'.html'
 
 		File.open(publicHtml, "w+").write(
 			unless standalone
