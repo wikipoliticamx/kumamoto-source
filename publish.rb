@@ -164,7 +164,7 @@ pages.each do |page|
 						Dir.mkdir( sectionDir )
 					end
 
-					redirectTemp = redirect.gsub(/{{title}}/, thisSectionData[0]+' | Mis '+page).
+					redirectTemp = redirect.gsub(/{{title}}/, thisSectionData[0]+' | Mis '+page+' | Pedro Kumamoto').
 						gsub(/{{og_image}}/, 'img/screenshots/'+page+'-'+section+'.jpg').
 						gsub(/{{og_url}}/, page+'/'+section+'/').
 						gsub(/{{og_description}}/, thisSectionData[1]).
