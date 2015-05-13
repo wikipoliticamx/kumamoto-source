@@ -125,13 +125,14 @@ sectionData = {
 	'en-el-congreso'=>['En el congreso', 'Queremos reivindicar el quehacer político a través de las formas y los fondos. Estos son mis compromisos durante mi periodo legislativo.']
 }
 
-pages = ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'privacidad']
+pages = ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'privacidad', 'agenda']
 
 pages.each do |page|
 	File.open(root+page+".html") do |f|
 		html = readAndEncode( f )
 		
 		standalone = html.match(/{{standalone}}/)
+		html.gsub!(/{{standalone}}/,'')
 
 		# FRONT MATTER
 		title = readProp('title', html);
