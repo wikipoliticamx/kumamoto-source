@@ -28,7 +28,7 @@ OptionParser.new do|opts|
 	#end
 end.parse!
 
-root = '/Users/bex/Dropbox/prjcts/else/wikipolitica/WEB/kumamoto-source/' #Dir.pwd+'/'
+root = '/Users/bex/Dropbox/prjcts/else/wikipolitica/campaña/WEB/kumamoto-source/' #Dir.pwd+'/'
 publicDir =  root.gsub(/kumamoto-source/, 'kumamoto-mx')+($OPT[:test] ? 'test/' : '')
 
 # smart defaults
@@ -125,7 +125,7 @@ sectionData = {
 	'en-el-congreso'=>['En el congreso', 'Queremos reivindicar el quehacer político a través de las formas y los fondos. Estos son mis compromisos durante mi periodo legislativo.']
 }
 
-pages = ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'privacidad', 'agenda']
+pages = ['index', 'principios', 'propuestas', 'compromisos', 'kit', 'privacidad', 'agenda', 'prensa', 'equipo']
 
 pages.each do |page|
 	File.open(root+page+".html") do |f|
